@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-kq7#z92d9ygyswwv028x7ullc)w*oj*krq-)%n+sww0a%3-ke1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -124,13 +125,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR/ "kokkocart" / "static"
+   str(BASE_DIR/ "kokkocart" / "static" ),
 ]
+
+STATIC_ROOT =  os.path.join(BASE_DIR / 'static' )
+# STATIC_ROOT = '/home/AyishaNiya/kokkocart/static'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 
 
