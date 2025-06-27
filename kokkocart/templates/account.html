@@ -1,0 +1,47 @@
+
+{% extends "blank_layout.html" %}
+{% load static %}
+
+{% block banner %}
+    {% include 'account_banner.html'%}
+{% endblock banner %}
+
+{% block content %}
+{% block extra_scripts %}
+<script>
+        
+        var LoginForm = document.getElementById("LoginForm");
+        var RegForm = document.getElementById("RegForm");
+        var Indicator = document.getElementById("Indicator");
+        function register() {
+            RegForm.style.transform = "translateX(800px)";
+            LoginForm.style.transform = "translateX(100px)";
+            Indicator.style.transform = "translateX(700px)";
+
+        }
+        function login() {
+            RegForm.style.transform = "translateX(300px)";
+            LoginForm.style.transform = "translateX(300px)";
+            Indicator.style.transform = "translateX(0px)";
+
+
+        }
+        window.onload = function () {
+    
+    {% if register%}
+        
+            register()
+        
+        {% else %}
+        
+            login()
+        
+    {% endif %}
+        };
+     </script>
+    {% endblock extra_scripts %}
+
+   
+{% endblock content %}
+
+ 
